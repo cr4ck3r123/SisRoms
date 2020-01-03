@@ -1,11 +1,19 @@
-$('.dropdown-submenu > a').on("click", function(e) {
-    var submenu = $(this);
-    $('.dropdown-submenu .dropdown-menu').removeClass('show');
-    submenu.next('.dropdown-menu').addClass('show');
-    e.stopPropagation();
-});
-
-$('.dropdown').on("hidden.bs.dropdown", function() {
-    // hide any open menus when parent closes
-    $('.dropdown-menu.show').removeClass('show');
-});
+//
+//var modeloControl = '../../controller/controlModelo.php';
+//
+// 
+//$("#btnA").click(function () {   
+//    
+//   console.log('chegou');
+//    var action = 'action=a';
+//    var o = new Object();
+//    $.ajax({
+//        method: 'POST',
+//        url: modeloControl,
+//        data: action 
+//    }).done(function (msg) {            
+//           console.log(msg.toString());  
+//           
+//   //  alert("TESTE");  
+//});
+//});

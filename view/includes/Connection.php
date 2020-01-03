@@ -6,7 +6,7 @@ class Connection {
 
     function getConect() {
         try {
-            $this->conexao = new PDO('mysql:host=localhost;dbname=dbblog', 'root', '');
+            $this->conexao = new PDO('mysql:host=localhost;dbname=dbrom', 'root', '');
             $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $exc) {
             echo 'Erro -> ' . $exc;

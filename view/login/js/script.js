@@ -2,7 +2,7 @@
 var usuarioController = '../../controller/usuario.php';
 
 $("#btnLogin").click(function () {
-
+ //   console.log("chegou aki");
     var campos = $("#formLogin").serialize();
     var action = 'action=verifica';
 
@@ -11,7 +11,7 @@ $("#btnLogin").click(function () {
         url: usuarioController,
         data: action + '&' + campos
     }).done(function (msg) {
-             
+           console.log(msg);  
         if (msg == 0) {
             swal({
                 type: 'error',

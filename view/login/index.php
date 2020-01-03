@@ -8,8 +8,9 @@
         <link rel="stylesheet" href="../../plugins/fontawesome-free-5.12.0-web/css/all.css">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../../plugins/bootstrap-4.1.3-dist/css/bootstrap.min.css">
-         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+        
+        
         <title>Blog PHP - Login!</title>
     </head>
     <body class="text-center">
@@ -18,10 +19,8 @@
             <form name="formLogin" id="formLogin">
                 <input type="text" name="usuario" id="usuario" class="form-control mb-4" placeholder="Usuário">
                 <input type="password" name="senha" id="senha" class="form-control mb-4" placeholder="Senha">
-                <button type="button" id="btnLogin" class="form-control btn btn-primary">Login</button>
-                
-            </form>
-            
+                <button type="button" id="btnLogin" class="form-control btn btn-primary">Login</button>                
+            </form>            
         </div>
 
         <!-- JavaScript (Opcional) -->
