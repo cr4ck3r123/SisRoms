@@ -1,7 +1,7 @@
       
 <?php
 include '../includes/header.php';
-?> 
+?>
 <div class="container-fluid" style="margin-top: 5%">
     <div class="row">
         <div class="col-md-12">
@@ -18,23 +18,16 @@ include '../includes/header.php';
                         <th>Ação</th>
                     </tr>
                 </thead>
-                <tbody align="center">
-                    <tr>
-                        <td><?php
-                            include '../../controller/controlModelo.php';
-                            $DAO = new modelo();
-                            try {
-                                foreach ($DAO as $row) {
-                                    echo $row["modelo"] . "<br>";
-                                }
-                            } catch (Exception $ex) {
-                                
-                            }
-                            ?></td> 
-                        <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i> DOWNLOAD</button></td>
-                    </tr>
+                <?php include '../../dao/modeloDAO.php';
+                    ?> 
+                    <tbody align="center">
+                        <tr>
+                            <td>   </td> 
+                            <td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i> DOWNLOAD</button></td>
+                        </tr>
 
-                </tbody>
+                    </tbody>
+
             </table>
         </div>
     </div>
