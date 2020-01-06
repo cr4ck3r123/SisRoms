@@ -73,8 +73,24 @@ class UsuarioDAO {
         $stmt->bindValue(2, $senha);
         $stmt->execute();
         $rs = $stmt->fetchall(PDO::FETCH_ASSOC);
-              
+    
         return $rs;
+    }
+
+    function pegaLogin($login) {
+        try {
+            $sql = 'SELECT * FROM user WHERE usuario = ?';
+            $stmt = $this->conexao->prepare($sql);
+            $stmt->bindValue(1, $login);
+            $stmt->execute();            
+     
+                $rs = $stmt->fetchall(PDO::FETCH_ASSOC);
+                return $stmt->fetchall(PDO::FETCH_ASSOC);
+                       
+                        
+        } catch (Exception $ex) {
+            
+        }
     }
 
 }

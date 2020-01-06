@@ -1,6 +1,6 @@
 <?php
 
-include '../dao/UsuarioDAO.php';
+//include '../../dao/UsuarioDAO.php';
 
 extract($_POST);
 

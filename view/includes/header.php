@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<?php
+ob_start();
+include '../includes/Connection.php';
+
+if (isset($_GET['logout']) && $_GET['logout'] == 'true'):
+    session_destroy();
+    header("Location: ../login/index.php");
+endif;
+
+
+?>
+
 <html lang="pt-br">
     <head>
 
@@ -99,7 +111,7 @@
                     </li> 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" style="color: black" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                         <i class="far fa-share-square"></i>  Lenono
+                         <i class="far fa-share-square"></i>  Lenovo
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Lenovo A</a>
@@ -122,7 +134,7 @@
                         </div>
                     </li> 
                     <li></li>
-                    <li > <a class="btn btn-danger" href="#" style="margin-left: 40%"> <i class="fas fa-sign-out-alt" style=""></i> Sair</a></li>         
+                    <li > <a class="btn btn-danger" href="?logout=true" style="margin-left: 40%"> <i class="fas fa-sign-out-alt" style=""></i> Sair</a></li>         
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">

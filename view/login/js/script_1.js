@@ -31,7 +31,7 @@ $(document).ready(function () {
                         text: 'Usuário ou senha invalidos!',
                     });
                 } else {
-
+                        console.log(msg);
                     swal({
                         position: 'top-center',
                         type: 'success',

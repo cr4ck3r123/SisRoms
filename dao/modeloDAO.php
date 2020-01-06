@@ -1,6 +1,6 @@
 <?php
 
-include '../view/includes/Connection.php'; 
+//include '../view/includes/Connection.php'; 
 
   
 class modeloDAO {
@@ -14,11 +14,13 @@ class modeloDAO {
        }
        
       function getModelos() {
-        $sql = 'SELECT * FROM `modelo` WHERE sigla = A';
+        $sql = 'SELECT * FROM modelo WHERE sigla = ?';
         $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, 'A');
         $stmt->execute();
-        $rs = $stmt->fetchall(PDO::FETCH_ASSOC);
-        return $rs;
+      
+        $modelo = $stmt->fetchall(PDO::FETCH_ASSOC);
+        return $modelo;
     }
     
     

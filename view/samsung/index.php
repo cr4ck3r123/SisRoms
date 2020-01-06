@@ -1,6 +1,11 @@
       
 <?php
 include '../includes/header.php';
+
+include '../../dao/modeloDAO.php';
+$DAO = new modeloDAO();
+$modelo = $DAO->getModelos();
+
 ?>
 <div class="container-fluid" style="margin-top: 5%">
     <div class="row">
@@ -16,18 +21,22 @@ include '../includes/header.php';
                     <tr>                        
                         <th style="margin: 20%">Modelo</th>
                         <th>Rom</th>
+                        <th>Ferramenta</th>
                         <th>Esquema Eletrico</th>
                     </tr>
                 </thead>
-               
-                    <tbody align="width">
-                        <tr>
-                            <td style="width: 65%"> Galaxy A9 - SM-A302526VKXTDA  </td> 
-                            <td style="width: 20%"><a href="https://www.google.com" target="_blank"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i> DOWNLOAD</button></a></td>
-                            <td style="margin-left: 50%"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> DOWNLOAD</button></td>
-                        </tr>
 
-                    </tbody>
+                <tbody align="width">
+                    <?php                    foreach ($modelo as $row): ?>
+                    <tr>       
+                        <td style="width: 65%"> <?php  echo $row["modelo"].$row["versao"]. "<br>"; ?></td> 
+                        <td style=""><a href=<?php echo $row["url"]?> target="_blank"><button type="button" class="btn btn-success"><i class="fas fa-edit"></i> DOWNLOAD</button></a></td>
+                        <td style="margin-left: 50%"><a href=<?php echo $row["urlF"] ?> target="_blank"><button type="button" class="btn btn-info"><i class="fas fa-edit"></i> DOWNLOAD</button></a></td>
+                        <td style="margin-left: 50%"><button type="button" class="btn btn-danger"><i class="fas fa-edit"></i> DOWNLOAD</button></td>
+                        
+                    </tr>
+                     <?php endforeach; ?>
+                </tbody>
 
             </table>
         </div>
@@ -35,7 +44,6 @@ include '../includes/header.php';
 </div>
 
 <?php
-include './includes/cadastro.php';
 include '../includes/footer.php';
 ?>
  

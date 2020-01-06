@@ -7,6 +7,7 @@ class modelo {
         private $versao;
         private $sigla;
         private $idmarca;
+        private $url;
         
         function __construct($id, $modelo, $versao, $sigla, $idmarca) {
             $this->id = $id;
@@ -54,6 +55,14 @@ class modelo {
 
         function setIdmarca($idmarca) {
             $this->idmarca = $idmarca;
+        }
+
+        function getUrl() {
+            return $this->url;
+        }
+
+        function setUrl($url) {
+            $this->url = $url;
         }
 
 
