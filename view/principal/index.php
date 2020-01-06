@@ -1,6 +1,10 @@
-      
 <?php
+ob_start();
+session_start();
 include '../includes/header.php';
+//include '../../controller/usuario.php';
+//logado($_SESSION['administrador']);
+//print_r($_SESSION['xxxx']);
 ?>
 
 <div class="container" style="margin-top: 5%">

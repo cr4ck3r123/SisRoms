@@ -5,12 +5,15 @@ $("#btnLogin").click(function () {
     //   console.log("chegou aki");
     var campos = $("#formLogin").serialize();
     var action = 'action=verifica';
-    
-    
+ //   var botao = $(this).find(':button');
+
     $.ajax({
         method: 'POST',
         url: usuarioController,
-        data: action + '&' + campos
+        data: action + '&' + campos,
+        beforeSend: function () {
+             $("#btnLogin").text("Carregando...");
+            },
     }).done(function (msg) {
         console.log(msg);
         if (msg == 0) {
@@ -20,11 +23,17 @@ $("#btnLogin").click(function () {
                 text: 'Usuário ou senha invalidos!',
             });
         } else {
-           
-            $("#btnLogin").text("Carregando...");
-            setTimeout(function(){
-                    $(location).attr('href', '../principal/index.php');
-                },2000);         
+       
+            swal({
+                position: 'top-center',
+                type: 'success',
+                title: 'Ok...',
+                text: 'Usuário logado com sucesso!',
+                timer: 1000
+            });
+            setTimeout(function () {
+                $(location).attr('href', '../principal/index.php');
+            }, 2000);
         }
 
     });

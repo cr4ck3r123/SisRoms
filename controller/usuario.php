@@ -26,3 +26,16 @@ switch ($action) {
     default:
         break;
 }
+
+// ADMINISTRADOR LOGADO
+function logado($sessao){
+   
+    if($sessao == null || !isset($sessao)):
+              header("Location: ../login/index.php");
+              echo 'chegou aki 1';
+        else:
+            //  echo 'chegou aki 2';
+          
+        return TRUE;
+    endif;   
+}

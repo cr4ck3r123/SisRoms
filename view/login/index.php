@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php session_start() ?>
+<?php
+session_start()
+?>
 
 <html lang="pt-br">
     <head>
@@ -18,10 +20,10 @@
     <body class="text-center">
         <div class="container">
             <h1 class="mb-4"><i class="fas fa-glasses"></i> - Faça o Login</h1>
-            <form name="formLogin" id="formLogin">
+            <form action="" method="post" name="formLogin" id="formLogin">
                 <input type="text" name="usuario" id="usuario" class="form-control mb-4" placeholder="Usuário">
                 <input type="password" name="senha" id="senha" class="form-control mb-4" placeholder="Senha">
-                <button type="button" id="btnLogin" class="form-control btn btn-primary">Login</button>                
+                <button type="submit" id="btnLogin" class="form-control btn btn-primary">Login</button>                
             </form>            
         </div>
 
@@ -30,7 +32,7 @@
         <script src="../../plugins/jquery-3.4.1.min.js"></script>
         <script src="../../plugins/popper.min.js"></script>
         <script src="../../plugins/bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="../login/js/script.js"></script>
+        <script type="text/javascript" src="../login/js/script_1.js"></script>
     </body>    
   
 </html>
